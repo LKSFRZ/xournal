@@ -752,7 +752,12 @@ void update_canvas_bg(struct Page *pg)
       pt[1] = 0; pt[3] = pg->height;
       for (x=RULING_GRAPHSPACING; x<pg->width-1; x+=RULING_GRAPHSPACING) {
         pt[0] = pt[2] = x;
+	if(x ==  4*RULING_GRAPHSPACING || floor(x/RULING_GRAPHSPACING) == floor(pg->width/RULING_GRAPHSPACING)-4)
         gnome_canvas_item_new(group, gnome_canvas_line_get_type(),
+           "points", seg, "fill-color-rgba", RULING_MARGIN_COLOR,
+           "width-units", 2*RULING_THICKNESS, NULL);
+	else
+	gnome_canvas_item_new(group, gnome_canvas_line_get_type(),
            "points", seg, "fill-color-rgba", RULING_COLOR,
            "width-units", RULING_THICKNESS, NULL);
       }      

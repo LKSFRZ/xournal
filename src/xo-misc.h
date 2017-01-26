@@ -143,7 +143,7 @@ gint wrapper_gtk_dialog_run(GtkDialog *dialog);
 
 // defines for paper rulings
 
-#define RULING_MARGIN_COLOR 0xff0080ff
+#define RULING_MARGIN_COLOR 0x000080ff
 #define RULING_COLOR 0x40a0ffff
 #define RULING_THICKNESS 0.5
 #define RULING_LEFTMARGIN 72.0
